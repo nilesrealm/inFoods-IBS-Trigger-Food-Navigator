@@ -50,7 +50,7 @@ export class Verify extends OpenAPIRoute {
       if (success) break;
 
       const response = await fetch(
-        `${jotformApiUrl}/form/${formId}/submissions?apiKey=${jotformApiKey}`
+        `${jotformApiUrl}/form/${formId}/submissions?apiKey=${jotformApiKey}&limit=1000`
       );
       const data: any = await response.json();
       for (const entity of data.content) {
